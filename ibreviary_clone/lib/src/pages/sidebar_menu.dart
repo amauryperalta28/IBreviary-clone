@@ -13,7 +13,6 @@ class SideBarMenu extends StatelessWidget {
           Container(
             color: Colors.orange[200],
             child: Column(
-              
               children: <Widget>[
                 DrawerHeader(
                   child: Center(
@@ -45,12 +44,14 @@ class SideBarMenu extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text('Rituales', style: _menufontStyle),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, 'rituals');
+                  },
                 ),
               ],
             ),
           ),
-          Container(height: 300, color: Colors.orange[200] )
+          Container(height: 300, color: Colors.orange[200])
         ],
       ),
     );

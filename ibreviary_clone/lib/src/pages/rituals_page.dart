@@ -3,7 +3,7 @@ import 'package:ibreviary_clone/src/models/menu_item.dart';
 
 import 'ibreviary_app_bar.dart';
 
-class MisalPage extends StatelessWidget {
+class RitualsPage extends StatelessWidget {
   final textStyle = TextStyle(fontSize: 20.0);
   
   @override
@@ -19,11 +19,10 @@ class MisalPage extends StatelessWidget {
 
   Widget _buildBody() {
     List<MenuItem> options = [
-      MenuItem(description:'Ordinario de la Misa', key: 'OrdinarioDeLaMisa'),
-      MenuItem(description:'Lecturas y Oraciones', key: 'LecturasYOraciones'),
-      MenuItem(description:'Prefacio', key: 'Prefacio'),
-      MenuItem(description:'Liturgia Eucaristica', key: 'LiturgiaEucaristica'),
-      MenuItem(description:'Comunes', key: 'Comunes'),
+      MenuItem(description:'Bautismo', key: 'Bautismo'),
+      MenuItem(description:'Matrimonio con Misa', key: 'MatrimonioConMisa'),
+      MenuItem(description:'Unción de los enfermos', key: 'UncionDeLosEnfermos'),
+      MenuItem(description:'La comunión y el Viático de los enfermos', key: 'ComunionViaticos')
     ];
 
     var result = options
