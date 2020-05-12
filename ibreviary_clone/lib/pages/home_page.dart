@@ -8,48 +8,69 @@ class HomePage extends StatelessWidget {
         title: Text('IBreviary'),
         actions: _buildActions(),
       ),
-      drawer: Drawer(
-        child: _buildDrawer(),
+      drawer: _buildDrawer(),
+      body: Column(
+        children: <Widget>[
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 10.0, left: 5.0),
+              child: GestureDetector(
+                onTap: () {},
+                child: Icon(
+                  Icons.email,
+                  size: 40.0,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(),
+          Container(child: Center(child: Text('Lunes, 11 de Mayo 2020')))
+        ],
       ),
-      body: Text('Body'),
+      backgroundColor: Colors.orange[200],
     );
   }
 
   Widget _buildDrawer() {
     final fontStyle = TextStyle(fontSize: 18.0, fontWeight: FontWeight.w800);
 
-    return ListView(
-      padding: EdgeInsets.zero,
-      children: <Widget>[
-        DrawerHeader(
-          child: Center(child: Text('Lunes V semana de Pascua')),
-          decoration: BoxDecoration(color: Colors.amber),
-        ),
-        ListTile(
-          title: Text('Breviario', style: fontStyle),
-          onTap: () {},
-        ),
-        ListTile(
-          title: Text('Misal', style: fontStyle),
-          onTap: () {},
-        ),
-        ListTile(
-          title: Text('Lecturas', style: fontStyle),
-          onTap: () {},
-        ),
-        ListTile(
-          title: Text('Oraciones', style: fontStyle),
-          onTap: () {},
-        ),
-        ListTile(
-          title: Text('Rituales', style: fontStyle),
-          onTap: () {},
-        ),
-      ],
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          DrawerHeader(
+            child: Center(
+                child: Text(
+              'Lunes V semana de Pascua',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+            )),
+            decoration: BoxDecoration(color: Colors.amber[100]),
+          ),
+          ListTile(
+            title: Text('Breviario', style: fontStyle),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text('Misal', style: fontStyle),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text('Lecturas', style: fontStyle),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text('Oraciones', style: fontStyle),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text('Rituales', style: fontStyle),
+            onTap: () {},
+          ),
+        ],
+      ),
     );
   }
-
-  List<Widget> _buildMenuItems() {}
 
   List<Widget> _buildActions() {
     return <Widget>[
