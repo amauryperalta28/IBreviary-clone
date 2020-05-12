@@ -11,6 +11,7 @@ class RitualsPage extends StatelessWidget {
     return Scaffold(
       appBar: IBreviaryAppBar(
         title: Text('IBreviary'),
+        context: context,
       ),
       body: _buildBody(),
       backgroundColor: Colors.orange[200],

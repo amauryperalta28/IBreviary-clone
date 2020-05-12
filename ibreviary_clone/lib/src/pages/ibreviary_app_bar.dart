@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
 class IBreviaryAppBar extends AppBar {
+    IBreviaryAppBar({Key key, Widget title, BuildContext context})
+    : super(key: key, title: title, actions: buildScaffoldActions(context));
 
-    IBreviaryAppBar({Key key, Widget title})
-    : super(key: key, title: title, actions: buildScaffoldActions());
-
-    static List<Widget> buildScaffoldActions() {
+    static List<Widget> buildScaffoldActions(BuildContext context) {
     return <Widget>[
       Padding(
         padding: EdgeInsets.only(right: 20.0),
         child: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, 'home');
+          },
           child: Icon(Icons.home),
         ),
       ),

@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: IBreviaryAppBar(
         title: Text('IBreviary'),
+        context: context,
       ),
       drawer: SideBarMenu(),
       body: _buildHomeBody(),
