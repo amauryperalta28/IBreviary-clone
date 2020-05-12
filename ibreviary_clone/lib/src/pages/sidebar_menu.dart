@@ -40,7 +40,9 @@ class SideBarMenu extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text('Oraciones', style: _menufontStyle),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, 'prayers');
+                  },
                 ),
                 ListTile(
                   title: Text('Rituales', style: _menufontStyle),
