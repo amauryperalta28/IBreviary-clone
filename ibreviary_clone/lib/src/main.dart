@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
          color: Colors.black,
          opacity: 5.0
        ),
-        primaryColor: Colors.amber[100],
+        primaryColor: Colors.amber[50],
          
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

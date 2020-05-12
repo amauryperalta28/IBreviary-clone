@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ibreviary_clone/src/providers/alert_provider.dart';
 
 class HomePage extends StatelessWidget {
-  final currDt = DateTime.now();
+  final _currentDate = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,13 +21,14 @@ class HomePage extends StatelessWidget {
       children: <Widget>[
         Row(children: [getEmailIcon()]),
         Center(
-            child: Text('Martes, ${currDt.day} de Mayo ${currDt.year}',
+            child: Text(
+                '${getDay()}, ${_currentDate.day} de Mayo ${_currentDate.year}',
                 style: TextStyle(fontSize: 20, color: Colors.brown))),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only( top: 15.0),
+              margin: EdgeInsets.only(top: 15.0),
               child: Text('IBreviary',
                   style: TextStyle(
                       fontSize: 60,
@@ -41,36 +42,69 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             Container(
               margin: EdgeInsets.only(left: 15.0),
-              child: Text('Martes, V semana de Pascua',
+              child: Text('${getDay()}, V semana de Pascua',
                   style: TextStyle(
                       fontSize: 20,
                       color: Colors.brown,
                       fontStyle: FontStyle.italic)),
             ),
           ],
+        ),
+        Container(
+          margin: EdgeInsets.only(left: 25.0),
+          child: Row(
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Text('TIPO', style: TextStyle(color: Colors.white)),
+                  Text('HORA', style: TextStyle(color: Colors.white))
+                ],
+              ),
+              VerticalDivider(
+                  indent: 30, endIndent: 20, thickness: 20, width: 15),
+              Container(
+                padding: EdgeInsets.all(5.0),
+                decoration: BoxDecoration(
+                  border: Border(
+                    left: BorderSide(
+                        width: 0.0,
+                        color: Colors.black,
+                        style: BorderStyle.solid),
+                  ),
+                ),
+                child: Column(
+                  children: <Widget>[Text('Feria'), Text('Pascua')],
+                ),
+              ),
+            ],
+          ),
         )
       ],
     );
   }
 
-  String getMonth(DateTime time, String day) {
+  String getDay() {
     var months = {
       '1': 'Lunes',
       '2': 'Martes',
-      '3': 'Miercoles',
+      '3': 'Miércoles',
       '4': 'Jueves',
       '5': 'Viernes',
-      '6': 'Sabado',
+      '6': 'Sábado',
       '7': 'Domingo'
     };
 
-    return months[day];
+    String weekDay = _currentDate.weekday.toString();
+
+    print(weekDay);
+
+    return months[weekDay];
   }
 
   Widget getEmailIcon() {
     return Container(
       child: Padding(
-        padding: const EdgeInsets.only(top: 20.0, left: 40.0, bottom: 30.0),
+        padding: const EdgeInsets.only(top: 20.0, left: 20.0, bottom: 30.0),
         child: GestureDetector(
           onTap: () {},
           child: Icon(
@@ -84,7 +118,8 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _buildDrawer() {
-    final fontStyle = TextStyle(fontSize: 18.0, fontWeight: FontWeight.w800);
+    final _menufontStyle =
+        TextStyle(fontSize: 18.0, fontWeight: FontWeight.w800);
 
     return Drawer(
       child: ListView(
@@ -96,26 +131,26 @@ class HomePage extends StatelessWidget {
               'Lunes V semana de Pascua',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
             )),
-            decoration: BoxDecoration(color: Colors.amber[100]),
+            decoration: BoxDecoration(color: Colors.amber[50]),
           ),
           ListTile(
-            title: Text('Breviario', style: fontStyle),
+            title: Text('Breviario', style: _menufontStyle),
             onTap: () {},
           ),
           ListTile(
-            title: Text('Misal', style: fontStyle),
+            title: Text('Misal', style: _menufontStyle),
             onTap: () {},
           ),
           ListTile(
-            title: Text('Lecturas', style: fontStyle),
+            title: Text('Lecturas', style: _menufontStyle),
             onTap: () {},
           ),
           ListTile(
-            title: Text('Oraciones', style: fontStyle),
+            title: Text('Oraciones', style: _menufontStyle),
             onTap: () {},
           ),
           ListTile(
-            title: Text('Rituales', style: fontStyle),
+            title: Text('Rituales', style: _menufontStyle),
             onTap: () {},
           ),
         ],
