@@ -87,11 +87,13 @@ class PrayersPage extends StatelessWidget {
           subtitle: 'Siervos de la Caridad(Guanelianos)'),
       MenuItem(
           description: 'Oracion a Maria por el COVID19 - Papa Francisco',
-          key: 'COVID19'),
+          key: 'COVID19',
+          subtitle: ''),
       MenuItem(
           description:
               'Oracion a Maria Salus Popolo Romani por el COVID19 - Papa Francisco',
-          key: 'PopoloRomani')
+          key: 'PopoloRomani',
+          subtitle: '')
     ];
 
     return optionsWithSubtitles;
@@ -117,11 +119,16 @@ class PrayersPage extends StatelessWidget {
     var resultWithSubtitles = _getMenuItemsWithSubtitles()
         .map((menuItem) => Column(
               children: <Widget>[
-                Container(
-                  height: 50,
-                  color: Colors.orange[200],
-                  child: Center(
+                CircleAvatar(
+                  radius: 30.0,
+                  backgroundImage: NetworkImage(
+                      'https://filosofia.nueva-acropolis.es/wp-content/uploads/2019/01/Padre-pio.jpg'),
+                ),
+                ListTile(
+                  title: Center(
                       child: Text(menuItem.description, style: textStyle)),
+                  subtitle: Center(child: Text(menuItem.subtitle)),
+                  onTap: () {},
                 ),
                 Divider(
                   thickness: 2.0,
