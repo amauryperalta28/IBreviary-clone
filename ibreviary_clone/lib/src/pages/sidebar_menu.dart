@@ -9,37 +9,46 @@ class SideBarMenu extends StatelessWidget {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
-        children: <Widget>[
-          DrawerHeader(
-            child: Center(
-                child: Text(
-              '${dateUtils.getCurrentDayName()} V semana de Pascua',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-            )),
-            decoration: BoxDecoration(color: Colors.amber[50]),
+        children: [
+          Container(
+            color: Colors.orange[200],
+            child: Column(
+              
+              children: <Widget>[
+                DrawerHeader(
+                  child: Center(
+                      child: Text(
+                    '${dateUtils.getCurrentDayName()} V semana de Pascua',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                  )),
+                  decoration: BoxDecoration(color: Colors.amber[50]),
+                ),
+                ListTile(
+                  title: Text('Breviario', style: _menufontStyle),
+                  onTap: () {
+                    Navigator.pushNamed(context, 'breviary');
+                  },
+                ),
+                ListTile(
+                  title: Text('Misal', style: _menufontStyle),
+                  onTap: () {},
+                ),
+                ListTile(
+                  title: Text('Lecturas', style: _menufontStyle),
+                  onTap: () {},
+                ),
+                ListTile(
+                  title: Text('Oraciones', style: _menufontStyle),
+                  onTap: () {},
+                ),
+                ListTile(
+                  title: Text('Rituales', style: _menufontStyle),
+                  onTap: () {},
+                ),
+              ],
+            ),
           ),
-          ListTile(
-            title: Text('Breviario', style: _menufontStyle),
-            onTap: () {
-              Navigator.pushNamed(context, 'breviary');
-            },
-          ),
-          ListTile(
-            title: Text('Misal', style: _menufontStyle),
-            onTap: () {},
-          ),
-          ListTile(
-            title: Text('Lecturas', style: _menufontStyle),
-            onTap: () {},
-          ),
-          ListTile(
-            title: Text('Oraciones', style: _menufontStyle),
-            onTap: () {},
-          ),
-          ListTile(
-            title: Text('Rituales', style: _menufontStyle),
-            onTap: () {},
-          ),
+          Container(height: 300, color: Colors.orange[200] )
         ],
       ),
     );
