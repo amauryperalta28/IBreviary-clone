@@ -1,6 +1,6 @@
 class _DateUtils {
   final _currentDate = DateTime.now();
-  String getDay() {
+  String getCurrentDayName() {
     Map<String, String> months = {
       '1': 'Lunes',
       '2': 'Martes',

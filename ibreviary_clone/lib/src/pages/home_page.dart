@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:ibreviary_clone/src/pages/sidebar_menu.dart';
-import 'package:ibreviary_clone/src/providers/alert_provider.dart';
 import 'package:ibreviary_clone/src/utils/date_utils.dart';
+
+import 'ibreviary_app_bar.dart';
 
 class HomePage extends StatelessWidget {
   final _currentDate = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: IBreviaryAppBar(
         title: Text('IBreviary'),
-        actions: _buildScaffoldActions(context),
       ),
       drawer: SideBarMenu(),
       body: _buildHomeBody(),
@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
         Row(children: [getEmailIcon()]),
         Center(
             child: Text(
-                '${dateUtils.getDay()}, ${_currentDate.day} de Mayo ${_currentDate.year}',
+                '${dateUtils.getCurrentDayName()}, ${_currentDate.day} de Mayo ${_currentDate.year}',
                 style: TextStyle(fontSize: 20, color: Colors.brown))),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             Container(
               margin: EdgeInsets.only(left: 15.0),
-              child: Text('${dateUtils.getDay()}, V semana de Pascua',
+              child: Text('${dateUtils.getCurrentDayName()}, V semana de Pascua',
                   style: TextStyle(
                       fontSize: 20,
                       color: Colors.brown,
@@ -99,35 +99,5 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  List<Widget> _buildScaffoldActions(BuildContext context) {
-    return <Widget>[
-      Padding(
-        padding: EdgeInsets.only(right: 20.0),
-        child: GestureDetector(
-          onTap: () {},
-          child: Icon(Icons.home),
-        ),
-      ),
-      Padding(
-        padding: EdgeInsets.only(right: 20.0),
-        child: GestureDetector(
-          onTap: () {
-            alertProvider.showAlert(context, 'Download');
-          },
-          child: Icon(Icons.cloud_download),
-        ),
-      ),
-      Padding(
-        padding: EdgeInsets.only(right: 20.0),
-        child: GestureDetector(
-          onTap: () {
-            alertProvider.showAlert(context, 'Settings');
-          },
-          child: Icon(Icons.brightness_high),
-        ),
-      )
-    ];
   }
 }

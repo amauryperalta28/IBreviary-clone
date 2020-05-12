@@ -13,14 +13,16 @@ class SideBarMenu extends StatelessWidget {
           DrawerHeader(
             child: Center(
                 child: Text(
-              '${dateUtils.getDay()} V semana de Pascua',
+              '${dateUtils.getCurrentDayName()} V semana de Pascua',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
             )),
             decoration: BoxDecoration(color: Colors.amber[50]),
           ),
           ListTile(
             title: Text('Breviario', style: _menufontStyle),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, 'breviary');
+            },
           ),
           ListTile(
             title: Text('Misal', style: _menufontStyle),

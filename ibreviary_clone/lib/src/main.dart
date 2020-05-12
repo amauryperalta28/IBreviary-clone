@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ibreviary_clone/src/pages/breviary_page.dart';
 import 'package:ibreviary_clone/src/pages/home_page.dart';
 
 
@@ -25,7 +26,11 @@ class MyApp extends StatelessWidget {
          
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-       home: HomePage(),
+       initialRoute: 'home',
+       routes: <String, WidgetBuilder>{
+          'home': (BuildContext context) => HomePage(),
+          'breviary':(BuildContext context) => BreviaryPage(),
+       }  ,
     );
   }
 }
