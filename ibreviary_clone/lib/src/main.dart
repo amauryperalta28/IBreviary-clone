@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ibreviary_clone/src/pages/breviary_page.dart';
 import 'package:ibreviary_clone/src/pages/home_page.dart';
+import 'package:ibreviary_clone/src/pages/misal_page.dart';
 
 
 void main() {
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
        routes: <String, WidgetBuilder>{
           'home': (BuildContext context) => HomePage(),
           'breviary':(BuildContext context) => BreviaryPage(),
+          'misal':(BuildContext context) => MisalPage(),
        }  ,
     );
   }
