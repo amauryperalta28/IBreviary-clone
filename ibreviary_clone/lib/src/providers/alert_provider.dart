@@ -7,13 +7,26 @@ class _AlertProvider {
         barrierDismissible: true,
         builder: (context) {
           return AlertDialog(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0)),
-            title: Text(text),
+            title: Text(text, style: TextStyle(fontSize: 18)),
             content: Column(
               mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Text(text),
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    FlatButton(
+                      onPressed: () {},
+                      child: Text('Cancelar',
+                          style: TextStyle(color: Colors.red, fontSize: 18)),
+                    ),
+                    FlatButton(
+                      onPressed: () {},
+                      child: Text('OK',
+                          style: TextStyle(color: Colors.red, fontSize: 18)),
+                    ),
+                  ],
+                ),
               ],
             ),
           );

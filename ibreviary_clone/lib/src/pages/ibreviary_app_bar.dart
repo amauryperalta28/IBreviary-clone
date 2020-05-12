@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ibreviary_clone/src/providers/alert_provider.dart';
 
 class IBreviaryAppBar extends AppBar {
-    IBreviaryAppBar({Key key, Widget title, BuildContext context})
-    : super(key: key, title: title, actions: buildScaffoldActions(context));
+  IBreviaryAppBar({Key key, Widget title, BuildContext context})
+      : super(key: key, title: title, actions: buildScaffoldActions(context));
 
-    static List<Widget> buildScaffoldActions(BuildContext context) {
+  static List<Widget> buildScaffoldActions(BuildContext context) {
     return <Widget>[
       Padding(
         padding: EdgeInsets.only(right: 20.0),
@@ -19,7 +20,8 @@ class IBreviaryAppBar extends AppBar {
         padding: EdgeInsets.only(right: 20.0),
         child: GestureDetector(
           onTap: () {
-
+            alertProvider.showAlert(
+                context, 'De verdad quieres descargar las oraciones de hoy?');
           },
           child: Icon(Icons.cloud_download),
         ),
@@ -27,14 +29,10 @@ class IBreviaryAppBar extends AppBar {
       Padding(
         padding: EdgeInsets.only(right: 20.0),
         child: GestureDetector(
-          onTap: () {
- 
-          },
+          onTap: () {},
           child: Icon(Icons.brightness_high),
         ),
       )
     ];
   }
-
 }
-
