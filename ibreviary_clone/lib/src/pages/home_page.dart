@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ibreviary_clone/src/pages/sidebar_menu.dart';
 import 'package:ibreviary_clone/src/providers/alert_provider.dart';
+import 'package:ibreviary_clone/src/utils/date_utils.dart';
 
 class HomePage extends StatelessWidget {
   final _currentDate = DateTime.now();
@@ -10,7 +12,7 @@ class HomePage extends StatelessWidget {
         title: Text('IBreviary'),
         actions: _buildScaffoldActions(context),
       ),
-      drawer: _buildDrawer(),
+      drawer: SideBarMenu(),
       body: _buildHomeBody(),
       backgroundColor: Colors.orange[200],
     );
@@ -22,7 +24,7 @@ class HomePage extends StatelessWidget {
         Row(children: [getEmailIcon()]),
         Center(
             child: Text(
-                '${getDay()}, ${_currentDate.day} de Mayo ${_currentDate.year}',
+                '${dateUtils.getDay()}, ${_currentDate.day} de Mayo ${_currentDate.year}',
                 style: TextStyle(fontSize: 20, color: Colors.brown))),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -42,7 +44,7 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             Container(
               margin: EdgeInsets.only(left: 15.0),
-              child: Text('${getDay()}, V semana de Pascua',
+              child: Text('${dateUtils.getDay()}, V semana de Pascua',
                   style: TextStyle(
                       fontSize: 20,
                       color: Colors.brown,
@@ -83,24 +85,6 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  String getDay() {
-    var months = {
-      '1': 'Lunes',
-      '2': 'Martes',
-      '3': 'Miércoles',
-      '4': 'Jueves',
-      '5': 'Viernes',
-      '6': 'Sábado',
-      '7': 'Domingo'
-    };
-
-    String weekDay = _currentDate.weekday.toString();
-
-    print(weekDay);
-
-    return months[weekDay];
-  }
-
   Widget getEmailIcon() {
     return Container(
       child: Padding(
@@ -113,47 +97,6 @@ class HomePage extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildDrawer() {
-    final _menufontStyle =
-        TextStyle(fontSize: 18.0, fontWeight: FontWeight.w800);
-
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          DrawerHeader(
-            child: Center(
-                child: Text(
-              'Lunes V semana de Pascua',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-            )),
-            decoration: BoxDecoration(color: Colors.amber[50]),
-          ),
-          ListTile(
-            title: Text('Breviario', style: _menufontStyle),
-            onTap: () {},
-          ),
-          ListTile(
-            title: Text('Misal', style: _menufontStyle),
-            onTap: () {},
-          ),
-          ListTile(
-            title: Text('Lecturas', style: _menufontStyle),
-            onTap: () {},
-          ),
-          ListTile(
-            title: Text('Oraciones', style: _menufontStyle),
-            onTap: () {},
-          ),
-          ListTile(
-            title: Text('Rituales', style: _menufontStyle),
-            onTap: () {},
-          ),
-        ],
       ),
     );
   }

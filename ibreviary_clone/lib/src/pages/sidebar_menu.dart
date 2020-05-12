@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+import 'package:ibreviary_clone/src/utils/date_utils.dart';
+
+class SideBarMenu extends StatelessWidget {
+  final _menufontStyle = TextStyle(fontSize: 18.0, fontWeight: FontWeight.w800);
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          DrawerHeader(
+            child: Center(
+                child: Text(
+              '${dateUtils.getDay()} V semana de Pascua',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+            )),
+            decoration: BoxDecoration(color: Colors.amber[50]),
+          ),
+          ListTile(
+            title: Text('Breviario', style: _menufontStyle),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text('Misal', style: _menufontStyle),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text('Lecturas', style: _menufontStyle),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text('Oraciones', style: _menufontStyle),
+            onTap: () {},
+          ),
+          ListTile(
+            title: Text('Rituales', style: _menufontStyle),
+            onTap: () {},
+          ),
+        ],
+      ),
+    );
+  }
+}
