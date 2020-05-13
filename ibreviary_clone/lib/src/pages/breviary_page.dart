@@ -4,7 +4,8 @@ import 'package:ibreviary_clone/src/models/menu_item.dart';
 import 'ibreviary_app_bar.dart';
 
 class BreviaryPage extends StatelessWidget {
-  final textStyle = TextStyle(fontSize: 20.0);
+  final _textStyle = TextStyle(fontSize: 20.0);
+  static const routeName = '/breviary';
   
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class BreviaryPage extends StatelessWidget {
                 Container(
                   height: 50,
                   color: Colors.orange[200],
-                  child: Center(child: Text(menuItem.description, style: textStyle)),
+                  child: Center(child: Text(menuItem.description, style: _textStyle)),
                 ),
                 Divider(
                   thickness: 2.0,

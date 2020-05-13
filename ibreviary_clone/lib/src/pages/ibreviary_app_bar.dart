@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ibreviary_clone/src/pages/settings_page.dart';
 import 'package:ibreviary_clone/src/providers/alert_provider.dart';
+
+import 'home_page.dart';
 
 class IBreviaryAppBar extends AppBar {
   IBreviaryAppBar({Key key, Widget title, BuildContext context})
@@ -11,7 +14,7 @@ class IBreviaryAppBar extends AppBar {
         padding: EdgeInsets.only(right: 20.0),
         child: GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, 'home');
+            Navigator.pushNamed(context, HomePage.routeName);
           },
           child: Icon(Icons.home),
         ),
@@ -30,7 +33,7 @@ class IBreviaryAppBar extends AppBar {
         padding: EdgeInsets.only(right: 20.0),
         child: GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, 'settings');
+            Navigator.pushNamed(context, SettingsPage.routeName);
             
           },
           child: Icon(Icons.brightness_high),

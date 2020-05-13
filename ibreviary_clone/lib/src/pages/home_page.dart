@@ -6,6 +6,8 @@ import 'ibreviary_app_bar.dart';
 
 class HomePage extends StatelessWidget {
   final _currentDate = DateTime.now();
+  static const routeName = '/home';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

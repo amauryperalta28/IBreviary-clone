@@ -5,7 +5,8 @@ import 'ibreviary_app_bar.dart';
 
 class RitualsPage extends StatelessWidget {
   final textStyle = TextStyle(fontSize: 20.0);
-  
+  static const routeName = '/rituals';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

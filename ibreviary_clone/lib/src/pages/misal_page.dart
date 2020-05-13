@@ -5,6 +5,7 @@ import 'ibreviary_app_bar.dart';
 
 class MisalPage extends StatelessWidget {
   final textStyle = TextStyle(fontSize: 20.0);
+  static const routeName = '/misal';
   
   @override
   Widget build(BuildContext context) {

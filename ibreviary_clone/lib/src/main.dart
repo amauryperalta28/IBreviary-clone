@@ -12,9 +12,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // var primaryColor = const Color(0xE6CB9E);
-  static const primaryColor = Color.fromARGB(1, 230, 203, 158);
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,14 +27,14 @@ class MyApp extends StatelessWidget {
          
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-       initialRoute: 'home',
+       initialRoute: HomePage.routeName,
        routes: <String, WidgetBuilder>{
-          'home': (BuildContext context) => HomePage(),
-          'breviary':(BuildContext context) => BreviaryPage(),
-          'misal':(BuildContext context) => MisalPage(),
-          'rituals':(BuildContext context) => RitualsPage(),
-          'prayers' :(BuildContext context) => PrayersPage(),
-          'settings' :(BuildContext context) => SettingsPage()
+          HomePage.routeName: (BuildContext context) => HomePage(),
+          BreviaryPage.routeName:(BuildContext context) => BreviaryPage(),
+          MisalPage.routeName:(BuildContext context) => MisalPage(),
+          RitualsPage.routeName:(BuildContext context) => RitualsPage(),
+          PrayersPage.routeName :(BuildContext context) => PrayersPage(),
+          SettingsPage.routeName :(BuildContext context) => SettingsPage()
        }  ,
     );
   }
