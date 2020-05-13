@@ -4,6 +4,7 @@ import 'package:ibreviary_clone/src/pages/home_page.dart';
 import 'package:ibreviary_clone/src/pages/misal_page.dart';
 import 'package:ibreviary_clone/src/pages/prayers_page.dart';
 import 'package:ibreviary_clone/src/pages/rituals_page.dart';
+import 'package:ibreviary_clone/src/pages/settings_page.dart';
 
 
 void main() {
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
           'breviary':(BuildContext context) => BreviaryPage(),
           'misal':(BuildContext context) => MisalPage(),
           'rituals':(BuildContext context) => RitualsPage(),
-          'prayers' :(BuildContext context) => PrayersPage()
+          'prayers' :(BuildContext context) => PrayersPage(),
+          'settings' :(BuildContext context) => SettingsPage()
        }  ,
     );
   }

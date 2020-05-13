@@ -29,7 +29,10 @@ class IBreviaryAppBar extends AppBar {
       Padding(
         padding: EdgeInsets.only(right: 20.0),
         child: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, 'settings');
+            
+          },
           child: Icon(Icons.brightness_high),
         ),
       )
