@@ -5,8 +5,13 @@ import 'package:ibreviary_clone/src/providers/alert_provider.dart';
 import 'home_page.dart';
 
 class IBreviaryAppBar extends AppBar {
+   static final _textTheme = TextTheme(headline6: TextStyle(color: Color(0xFFb0380a), fontSize: 20.0, fontWeight: FontWeight.w500));
+
   IBreviaryAppBar({Key key, Widget title, BuildContext context})
-      : super(key: key, title: title, actions: buildScaffoldActions(context));
+      : super(key: key, 
+             title: title, 
+             actions: buildScaffoldActions(context), 
+             textTheme: _textTheme  );
 
   static List<Widget> buildScaffoldActions(BuildContext context) {
     return <Widget>[

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatelessWidget {
+  final _textTheme = TextTheme(headline6: TextStyle(color: Color(0xFFb0380a), fontSize: 20.0, fontWeight: FontWeight.w500));
   static const routeName = '/settings';
+
   @override
   Widget build(BuildContext context) {
 
@@ -9,6 +11,7 @@ class SettingsPage extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
+             textTheme: _textTheme,
             bottom: TabBar(
               tabs: [
                 Tab(text: 'Estilo'),
