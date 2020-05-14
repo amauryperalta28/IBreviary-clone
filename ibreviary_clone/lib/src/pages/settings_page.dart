@@ -17,7 +17,7 @@ class SettingsPage extends StatelessWidget {
               ],
             ),
             title: Text('Ajustes'),
-            backgroundColor: Colors.orange[50],
+            backgroundColor: Color(0xFFe6cb9e),
           ),
           body: TabBarView(
             children: [

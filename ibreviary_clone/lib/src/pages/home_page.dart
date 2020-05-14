@@ -7,6 +7,7 @@ import 'ibreviary_app_bar.dart';
 class HomePage extends StatelessWidget {
   final _currentDate = DateTime.now();
   static const routeName = '/home';
+  final _fontColor = Color(0xFF362613);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
       ),
       drawer: SideBarMenu(),
       body: _buildHomeBody(),
-      backgroundColor: Colors.orange[200],
+      backgroundColor: Color(0xFFd8b374),
     );
   }
 
@@ -28,7 +29,7 @@ class HomePage extends StatelessWidget {
         Center(
             child: Text(
                 '${dateUtils.getCurrentDayName()}, ${_currentDate.day} de Mayo ${_currentDate.year}',
-                style: TextStyle(fontSize: 20, color: Colors.brown))),
+                style: TextStyle(fontSize: 20, color: _fontColor))),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -37,7 +38,7 @@ class HomePage extends StatelessWidget {
               child: Text('IBreviary',
                   style: TextStyle(
                       fontSize: 60,
-                      color: Colors.brown,
+                      color: _fontColor,
                       fontFamily: 'Winchester')),
             ),
           ],
@@ -47,10 +48,11 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             Container(
               margin: EdgeInsets.only(left: 15.0),
-              child: Text('${dateUtils.getCurrentDayName()}, V semana de Pascua',
+              child: Text(
+                  '${dateUtils.getCurrentDayName()}, V semana de Pascua',
                   style: TextStyle(
                       fontSize: 20,
-                      color: Colors.brown,
+                      color: _fontColor,
                       fontStyle: FontStyle.italic)),
             ),
           ],

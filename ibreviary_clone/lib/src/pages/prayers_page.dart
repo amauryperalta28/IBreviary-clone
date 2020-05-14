@@ -16,7 +16,7 @@ class PrayersPage extends StatelessWidget {
         context: context,
       ),
       body: _buildBody(),
-      backgroundColor: Colors.orange[200],
+      backgroundColor: Color(0xFFd8b374),
     );
   }
 
@@ -108,7 +108,7 @@ class PrayersPage extends StatelessWidget {
               children: <Widget>[
                 Container(
                   height: 50,
-                  color: Colors.orange[200],
+                  color: Color(0xFFd8b374),
                   child: Center(
                       child: Text(menuItem.description, style: textStyle)),
                 ),

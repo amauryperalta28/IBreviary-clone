@@ -11,21 +11,24 @@ class SideBarMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var _menuColor = Color(0xFFd8b374);
+    var _fontColor = Color(0xFF362613);
+    
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
           Container(
-            color: Colors.orange[200],
+            color: _menuColor,
             child: Column(
               children: <Widget>[
                 DrawerHeader(
                   child: Center(
                       child: Text(
                     '${dateUtils.getCurrentDayName()} V semana de Pascua',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: _fontColor),
                   )),
-                  decoration: BoxDecoration(color: Colors.amber[50]),
+                  decoration: BoxDecoration(color: Color(0xFFe6cb9e)),
                 ),
                 ListTile(
                   title: Text('Breviario', style: _menufontStyle),
@@ -58,7 +61,7 @@ class SideBarMenu extends StatelessWidget {
               ],
             ),
           ),
-          Container(height: 300, color: Colors.orange[200])
+          Container(height: 300, color: _menuColor)
         ],
       ),
     );
