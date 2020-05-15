@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ibreviary_clone/src/models/menu_item.dart';
 
 import 'ibreviary_app_bar.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 class PrayersPage extends StatelessWidget {
   final textStyle = TextStyle(fontSize: 20.0);

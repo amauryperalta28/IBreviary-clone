@@ -20,12 +20,6 @@ class NotificationsPage extends StatelessWidget {
     );
   }
 
-  void _getFunctions(String key, BuildContext context) {
-    var functions = {'AyudaLugaresSantos': () {}};
-
-    functions[key]();
-  }
-
   Widget _buildBody(BuildContext context) {
     List<MenuItem> options = [
       MenuItem(

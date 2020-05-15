@@ -61,7 +61,7 @@ class HolyPlacesHelpPage extends StatelessWidget {
             FlatButton(
               child: Text('DONA AHORA'),
               onPressed: (){
-               var _launched = _launchInBrowser('https://campaign.proterrasancta.org/ibreviary-es-2019/');
+               _launchInBrowser('https://campaign.proterrasancta.org/ibreviary-es-2019/');
               },
             )
           ],
