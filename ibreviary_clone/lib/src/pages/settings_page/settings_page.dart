@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ibreviary_clone/src/pages/settings_page/style_settings.dart';
+import 'package:ibreviary_clone/src/pages/settings_page/text_style_settings.dart';
 
 class SettingsPage extends StatelessWidget {
   final _textTheme = TextTheme(
@@ -30,7 +31,7 @@ class SettingsPage extends StatelessWidget {
         body: TabBarView(
           children: [
             StyleSettings(),
-            Icon(Icons.directions_transit),
+            TextStyleSettings(),
             Icon(Icons.directions_bike),
           ],
         ),

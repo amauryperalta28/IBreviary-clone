@@ -52,7 +52,7 @@ class _StyleSettingsState extends State<StyleSettings> {
         children: <Widget>[
           Text(
             'Estilo',
-            style: TextStyle(fontSize: 16.0, color: Colors.grey),
+            style: TextStyle(fontSize: 16.0, color: Colors.grey ),
           ),
           Container(
             width: 150.0,
