@@ -6,8 +6,7 @@ import 'package:ibreviary_clone/src/pages/misal_page.dart';
 import 'package:ibreviary_clone/src/pages/notifications_page.dart';
 import 'package:ibreviary_clone/src/pages/prayers_page.dart';
 import 'package:ibreviary_clone/src/pages/rituals_page.dart';
-import 'package:ibreviary_clone/src/pages/settings_page.dart';
-
+import 'package:ibreviary_clone/src/pages/settings_page/settings_page.dart';
 
 void main() {
   runApp(MyApp());

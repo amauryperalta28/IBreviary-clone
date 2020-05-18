@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ibreviary_clone/src/pages/settings_page.dart';
+import 'package:ibreviary_clone/src/pages/settings_page/settings_page.dart';
+
 import 'package:ibreviary_clone/src/providers/alert_provider.dart';
 
 import 'home_page.dart';
