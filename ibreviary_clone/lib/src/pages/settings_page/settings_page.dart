@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ibreviary_clone/src/pages/settings_page/download_prayers_settings.dart';
 import 'package:ibreviary_clone/src/pages/settings_page/style_settings.dart';
 import 'package:ibreviary_clone/src/pages/settings_page/text_style_settings.dart';
 
@@ -32,7 +33,7 @@ class SettingsPage extends StatelessWidget {
           children: [
             StyleSettings(),
             TextStyleSettings(),
-            Icon(Icons.directions_bike),
+            DownloadPrayerSettings(),
           ],
         ),
       ),

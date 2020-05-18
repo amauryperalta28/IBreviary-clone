@@ -16,6 +16,7 @@ class _StyleSettingsState extends State<StyleSettings> {
   double autoscrollSpeed = 0.0;
   bool enableTextReading = false;
   bool checkbox = true;
+  Color _redColor = Color(0xFFbe360b);
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +101,7 @@ class _StyleSettingsState extends State<StyleSettings> {
             style: TextStyle(fontSize: 16.0, color: Colors.grey),
           ),
           Slider(
-            activeColor: Colors.redAccent,
+            activeColor: _redColor,
             inactiveColor: Colors.grey[200],
             value: sliderValue,
             min: 0.0,
@@ -123,7 +124,7 @@ class _StyleSettingsState extends State<StyleSettings> {
             style: TextStyle(fontSize: 16.0, color: Colors.grey),
           ),
           Checkbox(
-            activeColor: Colors.redAccent,
+            activeColor: _redColor,
             value: checkbox,
             onChanged: (value) {
               setState(() => checkbox = value);
