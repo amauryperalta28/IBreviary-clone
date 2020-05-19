@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ibreviary_clone/src/pages/settings_page/download_today_prayers.dart';
+import 'package:ibreviary_clone/src/pages/settings_page/downloaded_prayers.dart';
 import 'package:ibreviary_clone/src/pages/settings_page/dropdown.dart';
+import 'package:ibreviary_clone/src/utils/date_utils.dart';
 
 class DownloadPrayerSettings extends StatefulWidget {
   DownloadPrayerSettings({Key key}) : super(key: key);
@@ -10,9 +12,6 @@ class DownloadPrayerSettings extends StatefulWidget {
 }
 
 class _DownloadPrayerSettingsState extends State<DownloadPrayerSettings> {
-  final double _leftMargin = 15.0;
-  String languageDropDownValue = 'Español';
-  Color _buttonColor = Color(0xFFbe360b);
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +20,7 @@ class _DownloadPrayerSettingsState extends State<DownloadPrayerSettings> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         DownloadTodayPrayer(),
+        DownloadedPrayers(),
       ],
     );
   }

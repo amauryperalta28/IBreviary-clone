@@ -77,7 +77,12 @@ class _DownloadTodayPrayerState extends State<DownloadTodayPrayer> {
                 ),
               )
             ],
-          )
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 10.0, right: 10.0),
+            child: Divider(
+              thickness: 2.0,
+            ),)
         ],
       ),
     );
